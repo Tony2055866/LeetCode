@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * Created by admin on 2014/11/7.
+ * Binary Tree Level Order Traversal
  */
 public class BinaryTreeLevelOrderTraversal {
     static class TreeNode {
