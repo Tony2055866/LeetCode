@@ -1,5 +1,6 @@
 /**
- * Created by admin on 2014/11/8.
+ * copyright: www.acmerblog.com
+ *
  * Follow up for "Find Minimum in Rotated Sorted Array":
  What if duplicates are allowed?
 
