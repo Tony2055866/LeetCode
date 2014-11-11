@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 /**
  * Created by GaoTong on 2014/11/9.
@@ -42,6 +43,30 @@ public class SymmetricTree {
         return isLeft && isRight;
     }
 
+    public boolean isSymmetricIter(TreeNode root) {
+        if(root == null) return true;
+        Stack<TreeNode> leftStack = new Stack<TreeNode>();
+        Stack<TreeNode> rightStack = new Stack<TreeNode>();
+        leftStack.push(root.left);
+        rightStack.push(root.right);
+
+        while (leftStack.size() > 0 && rightStack.size() > 0){
+            TreeNode left = leftStack.pop();
+            TreeNode right = rightStack.pop();
+            if(left == null && right == null) continue;
+            if(left == null || right == null) return false;
+            if(left.val == right.val) {
+                leftStack.push(left.right);
+                leftStack.push(left.left);
+                rightStack.push(right.left);
+                rightStack.push(right.right);
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String args[]){
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -51,5 +76,6 @@ public class SymmetricTree {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
         System.out.println(new SymmetricTree().isSymmetric(root));
+        System.out.println(new SymmetricTree().isSymmetricIter(root));
     }
 }
