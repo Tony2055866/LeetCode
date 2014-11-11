@@ -49,7 +49,6 @@ public class SymmetricTree {
         Stack<TreeNode> rightStack = new Stack<TreeNode>();
         leftStack.push(root.left);
         rightStack.push(root.right);
-
         while (leftStack.size() > 0 && rightStack.size() > 0){
             TreeNode left = leftStack.pop();
             TreeNode right = rightStack.pop();
